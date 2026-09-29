@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f4f6f8;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 210 24% 16%;
+        --card: 0 0% 100%;
+        --card-foreground: 210 24% 16%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 210 24% 16%;
+        --primary: 152 63% 37%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 20% 96%;
+        --secondary-foreground: 210 24% 16%;
+        --muted: 210 20% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 152 55% 95%;
+        --accent-foreground: 152 63% 25%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 20% 90%;
+        --input: 214 20% 90%;
+        --ring: 152 63% 37%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Number columns render aligned */
+.tabular {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Thin scrollbars for enterprise feel */
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
